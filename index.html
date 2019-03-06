@@ -1,12 +1,127 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <link rel="stylesheet" href="index.css">
+    <title>选项卡</title>
 </head>
+
 <body>
-    
+    <div class="wrapper">
+        <header>超市</header>
+        <nav>
+            <ul>
+                <li class="active">蔬果</li>
+                <li>家电</li>
+                <li>奶制品</li>
+                <li>零食</li>
+            </ul>
+        </nav>
+        <main>
+            <section class="select">
+                <form oninput="x.value = parseInt(a.value) - parseInt(b.value)">
+                    商品价格: 0<input type="range" id="a" step="1" value="1" min="1" max="10">10元
+                    <br>
+                    商品折扣: <input type="number" step="1" value="1" min="0" max="5" id="b">元
+                    <br>
+                    商品总价: <output value="" id="x" min="0"></output>元
+                    <br>
+                    商品分类:
+                    <input list="o">
+                    <datalist id="o">
+                        <option value="白菜"></option>
+                        <option value="西兰花"></option>
+                        <option value="大葱"></option>
+                        <option value="芹菜"></option>
+                        <option value="茄子"></option>
+                    </datalist>
+                </form>
+            </section>
+
+            <section>
+                <form oninput="x.value = parseInt(a.value) - parseInt(b.value)">
+                    商品价格: 0<input type="range" id="a" step="100" value="100" min="100" max="10000">10000元
+                    <br>
+                    商品折扣: <input type="number" step="100" value="100" min="0" max="500" id="b">元
+                    <br>
+                    商品总价: <output value="" id="x" min="0"></output>元
+                    <br>
+                    商品分类:
+                    <input list="w">
+                    <datalist id="w">
+                        <option value="电视机"></option>
+                        <option value="洗衣机"></option>
+                        <option value="电饭锅"></option>
+                        <option value="微波炉"></option>
+                        <option value="冰箱"></option>
+                    </datalist>
+                </form>
+            </section>
+
+            <section>
+                <form oninput="x.value = parseInt(a.value) - parseInt(b.value)">
+                    商品价格: 0<input type="range" id="a" step="1" value="1" min="1" max="30">30元
+                    <br>
+                    商品折扣: <input type="number" step="1" value="1" min="0" max="10" id="b">元
+                    <br>
+                    商品总价: <output value="" id="x" min="0"></output>元
+                    <br>
+                    商品分类:
+                    <input list="q">
+                    <datalist id="q">
+                        <option value="蒙牛"></option>
+                        <option value="伊利"></option>
+                        <option value="光明"></option>
+                        <option value="三全"></option>
+                        <option value="花花牛"></option>
+                    </datalist>
+                </form>
+            </section>
+
+            <section>
+                <form oninput="x.value = parseInt(a.value) - parseInt(b.value)">
+                    商品价格: 0<input type="range" id="a" step="1" value="1" min="1" max="30">30元
+                    <br>
+                    商品折扣: <input type="number" step="1" value="1" min="0" max="10" id="b">元
+                    <br>
+                    商品总价: <output value="" id="x" min="0"></output>元
+                    <br>
+                    商品分类:
+                    <input list="r">
+                    <datalist id="r">
+                        <option value="薯片"></option>
+                        <option value="饼干"></option>
+                        <option value="牛肉干"></option>
+                        <option value="坚果"></option>
+                        <option value="小面包"></option>
+                    </datalist>
+                </form>
+            </section>
+        </main>
+    </div>
+
+    <script>
+        const oLi = document.getElementsByTagName("li");
+        const oSection = document.getElementsByTagName("section");
+        console.log(oLi)
+
+        for (let i = 0; i < oLi.length; i++) {
+            const oLis = oLi[i];
+            oLis.zw = i;
+            console.log(oLis.zw)
+           oLis.onclick = function(){
+            for(let j = 0; j < oLi.length; j++){
+                    oLi[j].className = "";
+                    oSection[j].className = "";
+                }
+                this.className = "active";
+                oSection[this.zw].className = "select"
+           }
+        }
+    </script>
 </body>
+
 </html>

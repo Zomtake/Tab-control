@@ -1,0 +1,47 @@
+body,
+h2,
+ul,
+li{
+    margin: 0; padding: 0;
+}
+li{
+    list-style: none;
+}
+header{
+    font-size: 26px;
+    text-align: center;
+}
+.wrapper{
+    width: 500px;
+    margin: 0 auto;
+}
+
+nav ul{
+    display: flex;
+}
+nav ul li {
+    text-align: center;
+    flex: 1;
+    line-height: 38px;
+    height: 38px;
+    background: #ccc;
+}
+.active{
+    background: #333;
+    color: #fff;
+}
+main{
+    height: 220px;
+    background: #ccc;
+}
+section{
+    display: none;
+    padding: 20px;
+    width: 300px;
+    margin: 0 auto;
+    line-height: 40px;
+}
+.select{
+    display: block;
+    
+}
